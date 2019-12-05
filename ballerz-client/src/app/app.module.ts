@@ -8,6 +8,8 @@ import { EventListComponent } from './event-list/event-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EventFormComponent } from './event-form/event-form.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
+import { MatButtonModule, MatToolbarModule, MatIconModule, MatSliderModule } from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,11 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    RoutingModule
+    RoutingModule, 
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
