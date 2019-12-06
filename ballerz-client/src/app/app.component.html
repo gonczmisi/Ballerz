@@ -1,3 +1,37 @@
 <!-- Event List -->
 <event-list></event-list>
+
+<mat-toolbar color="primary">
+    <button mat-button href="/">
+      <mat-icon>home</mat-icon>
+      Issue tracker
+    </button>
+  
+    <span class="fill-remaining-space" fxHide="false" fxHide.gt-sm></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+      <div *ngIf="authService.isLoggedIn">
+        <button mat-button routerLink="/issues">My issues</button>
+        <button mat-button routerLink="/issues/add">New issues</button>
+        <span>Hello, {{ authService.user.username }}!</span>
+        <button mat-button (click)="logout()">Logout</button>
+      </div>
+      <div *ngIf="!authService.isLoggedIn">
+        <button mat-button routerLink="/login">Login</button>
+      </div>
+    </div>
+    <button mat-icon-button [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-menu xPosition="before" #menu="matMenu">
+    <div *ngIf="authService.isLoggedIn">
+      <button mat-menu-item routerLink="/issues">My issues</button>
+      <button mat-menu-item routerLink="/issues/add">New issues</button>
+      <button mat-menu-item (click)="logout()">Logout</button>
+    </div>
+    <div *ngIf="!authService.isLoggedIn">
+      <button mat-menu-item routerLink="/login">Login</button>
+    </div>
+  </mat-menu>
+
 <router-outlet></router-outlet>

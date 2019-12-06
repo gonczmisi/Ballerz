@@ -10,13 +10,16 @@ import { EventFormComponent } from './event-form/event-form.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
 import { MatButtonModule, MatToolbarModule, MatIconModule, MatSliderModule } from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventListComponent,
     EventFormComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +30,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     MatIconModule,
     MatButtonModule,
     NgbModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

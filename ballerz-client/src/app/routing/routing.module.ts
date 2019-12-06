@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { EventListComponent } from "../event-list/event-list.component";
 import { EventFormComponent } from '../event-form/event-form.component';
 import { EventDetailComponent } from '../event-detail/event-detail.component';
+import { LoginFormComponent } from '../login-form/login-form.component';
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
@@ -13,15 +15,24 @@ const routes: Routes = [
   },
   {
     path: 'events',
-    component: EventListComponent
+    component: EventListComponent,
+    canActivate: [ AuthGuard ]
   },
   {
     path: 'events/new',
-    component: EventFormComponent
+    component: EventFormComponent, 
+    canActivate: [ AuthGuard ],
+    data: {
+     roles: ['ROLE_ADMIN']
+    }
   },
   {
     path: 'events/:id',
     component: EventDetailComponent
+  },
+  {
+    path: 'login',
+    component: LoginFormComponent
   },
 ];
 
