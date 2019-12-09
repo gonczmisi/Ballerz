@@ -47,8 +47,8 @@ public class BasicConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     protected void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
       auth
-          .inMemoryAuthentication()
-          .withUser("user").password(passwordEncoder().encode("password")).roles("USER");
+          .userDetailsService(userDetailsService)
+          .passwordEncoder(passwordEncoder());
     }
 
     @Bean

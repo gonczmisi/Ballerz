@@ -31,6 +31,7 @@ export class AuthService {
       this.isLoggedIn = true;
       this.user = user;
       console.log(user);
+      console.log('------------ KIVEREM MÉG MA!')
       return Promise.resolve(this.user);
     } catch (e) {
       console.log(e);
