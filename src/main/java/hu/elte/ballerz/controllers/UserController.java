@@ -72,7 +72,7 @@ public class UserController {
         return ResponseEntity.notFound().build();
     }
     
-    @PostMapping("register")
+    @PostMapping("/register")
     public ResponseEntity<User> register(@RequestBody User user) {
         Optional<User> oUser = userRepository.findByUsername(user.getUsername());
         if (oUser.isPresent()) {
@@ -84,7 +84,7 @@ public class UserController {
         return ResponseEntity.ok(userRepository.save(user));
     }
     
-    @PostMapping("login")
+    @PostMapping("/login")
     public ResponseEntity login() {
       return ResponseEntity.ok(authenticatedUser.getUser());
     } 

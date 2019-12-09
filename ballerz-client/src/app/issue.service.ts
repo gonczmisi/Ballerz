@@ -16,6 +16,7 @@ export class IssueService {
   ) { }
 
   getIssues(): Promise<Issue[]> {
+    console.log(":(")
     return this.http.get<Issue[]>(`${this.issueUrl}`, httpOptions).toPromise();
   }
 
