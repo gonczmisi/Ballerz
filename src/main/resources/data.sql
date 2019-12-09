@@ -1,8 +1,8 @@
 -- Adding some events for testing
-INSERT INTO event(name, type, organizer, venue, event_from, event_to, created_at, updated_at) VALUES('single match', 'SINGLE_MATCH', 'test organizer', 'test venue', CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME());
-INSERT INTO event(name, type, organizer, venue, event_from, event_to, created_at, updated_at) VALUES('tournament', 'TOURNAMENT', 'test organizer', 'test venue', CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME());
-INSERT INTO event(name, type, organizer, venue, event_from, event_to, created_at, updated_at) VALUES('single match 2', 'SINGLE_MATCH', 'test organizer', 'test venue', CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME());
-INSERT INTO event(name, type, organizer, venue, event_from, event_to, created_at, updated_at) VALUES('tournament 2', 'TOURNAMENT', 'test organizer', 'test venue', CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME());
+INSERT INTO event(name, type, organizer, venue, event_from, event_to, created_at, updated_at, current_players) VALUES('single match', 'SINGLE_MATCH', 'test organizer', 'test venue', CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), 0);
+INSERT INTO event(name, type, organizer, venue, event_from, event_to, created_at, updated_at, current_players) VALUES('tournament', 'TOURNAMENT', 'test organizer', 'test venue', CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), 0);
+INSERT INTO event(name, type, organizer, venue, event_from, event_to, created_at, updated_at, current_players) VALUES('single match 2', 'SINGLE_MATCH', 'test organizer', 'test venue', CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), 0);
+INSERT INTO event(name, type, organizer, venue, event_from, event_to, created_at, updated_at, current_players) VALUES('tournament 2', 'TOURNAMENT', 'test organizer', 'test venue', CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), 0);
 
 -- Adding some matches for testing
 INSERT INTO match(event_id, type, maximum_player_num, current_player_num, match_from, match_to, created_at, updated_at) VALUES(1, 'FRIENDLY_MATCH', 8, 0, CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME(), CURRENT_TIME());

@@ -57,6 +57,9 @@ public class Event {
     @Column(nullable = false)
     private LocalDateTime event_to;
     
+    @Column(nullable = false)
+    private Integer current_players;
+    
     @OneToMany(mappedBy = "event")
     private List<Match> matches;
 }
