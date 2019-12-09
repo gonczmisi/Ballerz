@@ -3,10 +3,36 @@ html {
     background-size: cover;
 	min-width: 400px;
 	max-width: 1920px;
+	color: khaki;
+}
+
+div {
+	color: khaki;
+}
+
+button {
+	color: khaki;
+}
+
+.mat-button-toggle-label-content{
+	color: darkgreen;
+	line-height: 0px !important;
+	padding: 12px 10px 10px 10px !important
+}
+
+.mat-button-toggle{
+	border: 2px darkgreen;
+	background-color: lightblue;
+	font-style: bold;
+}
+
+.mat-button-toggle-disabled {
+    border: 1px solid #c5c0c7;
+    background-color: #e1dde5;
 }
 
 html body {
-	background-color:#8fc7ff;
+	background-color:darkgreen;
 	text-align: justify;
 	font-size: 100%;
 	min-width: 400px;
