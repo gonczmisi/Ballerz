@@ -157,18 +157,59 @@ Egyelőre az alkalmazás nem tartalmaz említésre méltó specifikumot.
 Az alábbi használati eset diagramok szemléltetik azt, hogy az egyes szerepkörök mely elemekhez férnek hozzá.
 TODO: használati eset diagramok
 
-### Felületi tervek, oldalvázlatok
-
-Az alábbi képek szemléltetik az alkalmazás felületének terveit.
-TODO: felületi tervek (nem fontos annyira)
-
 ### Kliensoldali szolgáltatások
 
-TODO: szolgáltatások **listája**
+#### Egyszerű felhasználó által elérhető szolgáltatások
 
-### Egy funkció leírása
+* Bejelentkezés az alkalmazásba;
+* események listázása;
+* eseményhez hozzászólás írása;
+* események részleteinek megtekintése;
+* mérkőzések listázása;
+* mérkőzésre jelentkezés;
+* kijelentkezés az alkalmazásból.
 
-TODO: mi történik a kattintástól a megjelenítésig egy esetben?
+#### Szervező által elérheteő szolgáltatások
+
+* Bejelentkezés az alkalmazásba;
+* események létrehozása;
+* események listázása;
+* események részleteinek megtekintése;
+* mérkőzések létrehozása;
+* mérkőzések listázása;
+* kijelentkezés az alkalmazásból.
+
+#### Adminisztrátor által elérhető lehetőségek
+
+* Bejelentkezés az alkalmazásba;
+* események létrehozása;
+* események listázása;
+* események részleteinek megtekintése;
+* mérkőzések létrehozása;
+* mérkőzések listázása;
+* felhasználók létrehozása;
+* felhasználók törlése;
+* kijelentkezés az alkalmazásból.
+
+### Funkciók működésének leírása
+
+#### Bejelentkezés az alkalmazásba
+
+1. Látogassuk meg a **http://localhost:4200/login** oldalt.
+2. A felső menüben kattintsunk a *Login* gombra.
+3. Kattintsunk a *username* felirattal jelölt mezőbe.
+4. Vigyük be a mezőbe például a *kiszeltunde* szöveget.
+* Ekkor bemásolódik a *kiszeltunde* a **username** változó értékébe.
+5. Kattintsunk a *password* felirattal jelölt mezőbe.
+6. Vigyük be a mezőbe a *password* szöveget.
+* Ekkor bemásolódik a *password* a **password** változó értékébe.
+7. Kattintsunk az *Enter* felirattal jelölt gombra.
+* Ekkor meghívódik az **AuthService** osztály **login(string, string)** metódusa.
+  * A metódus egy **POST** requestet küld a *backend* számára, amely a **http://localhost:8080/** címen fut-szalad.
+  * A *backend* **BCrypt** eljárással hash-eli a jelszót, mivel az adatbázisban is ilyen formában tároljuk ezt (biztonsági okoból).
+  * Amennyiben megtalálható az adott felhasználónév-jelszó párossal tarkított adat a felhasználók között, jelzi ezt (vagy ennek ellenkezőjét) a *frontend* számára, amely kiértékeli a választ.
+    * Amennyiben helyesek voltak az adatok, a felhasználót bejelentkezetté teszi és továbbítja a **http://localhost:4200/events** címre.
+    * Amennyiben hibásak az adatok, jelzi ezt a felhasználó számára.
 
 ### Felhasználói dokumentáció
 
@@ -198,7 +239,12 @@ Ahhoz, hogy a programot használhassuk, az alábbi lépéseket kell megtennünk:
 
 ##### Igénybe vehető szolgálgatások
 
-Egyelőre körülbelül semmi. Mondjuk legalább bejelentkezni be lehet, de azt se sokáig szerintem lol.
+* Bejelentkezés az alkalmazásba;
+* események listázása;
+* események hozzáadása;
+* események törlése;
+* kijelentkezés az alkalmazásból.
+
 
 #### Hibák oka és elkerülése
 
