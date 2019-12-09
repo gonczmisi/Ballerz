@@ -172,27 +172,37 @@ TODO: mi történik a kattintástól a megjelenítésig egy esetben?
 
 ### Felhasználói dokumentáció
 
-TODO: felhasználói dokumentáció
-
-#### Az alkalmazás ismertetése
-
-
+Az alábbiakban olvashatjuk a felhasználói dokumentációt.
 
 #### Rendszerkövetelmények
 
-
+* Operációs rendszer: Windows
+* Memória: minimum 8 GB
+* Processzor: minimum Intel i7
+* Szabad tárhely: minimum 1 GB
 
 #### A használat módja
 
+Ahhoz, hogy a programot használhassuk, az alábbi lépéseket kell megtennünk:
 
+* Töltsük le a forrásállományokat innen, a **Github**-ról. Ezt két módon is megtehetjük:
+  * Jobb oldalon felül kattintsunk a **Download**, a letöltés után pedig tömörítsük ki.
+  * Ha a számítógépünkra van **Git** telepítve, akkor parancssorban futtassuk a ```git clone https://github.com/gonczmisi/Ballerz``` parancsot.
+* A létrejött Ballerz mappát nyissuk meg **NetBeans** segítségével.
+  * **Clean and Build** után futassuk (*Run*).
+* A Ballerz mappában található ballerz-client almappát nyissuk meg **Visual Studio Code** segítségével és nyissunk terminált.
+  * ```npm install```
+  * ```npm audit fix``` (*opcionális*)
+  * ```npm start```
+* Az oldalt elérhetjük, ha a böngészőbe beírjuk a **http://localhost:4200** címet.
 
 ##### Igénybe vehető szolgálgatások
 
-
+Egyelőre körülbelül semmi. Mondjuk legalább bejelentkezni be lehet, de azt se sokáig szerintem lol.
 
 #### Hibák oka és elkerülése
 
-
+LEHETETLEN.
 
 #### Példa a használatra
 
