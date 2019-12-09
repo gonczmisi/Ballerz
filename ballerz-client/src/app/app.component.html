@@ -7,7 +7,7 @@
         <span class="fill-remaining-space" fxHide="false" fxHide.gt-sm></span>
         <div fxLayout="row" fxShow="false" fxShow.gt-sm>
           <div *ngIf="authService.isLoggedIn">
-            <button mat-button routerLink="/issues">Matches</button>
+            <button mat-button routerLink="/issues">Events</button>
             <button
               mat-button routerLink="/issues/add"
               *ngIf="authService.isAdmin || authService.isOrganizer">

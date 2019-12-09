@@ -1,7 +1,6 @@
 package hu.elte.ballerz.controllers;
 
 import hu.elte.ballerz.entities.Event;
-import hu.elte.ballerz.entities.Match;
 import hu.elte.ballerz.repositories.EventRepository;
 import hu.elte.ballerz.security.AuthenticatedUser;
 import java.util.Optional;

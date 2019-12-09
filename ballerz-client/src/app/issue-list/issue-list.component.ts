@@ -45,6 +45,7 @@ export class IssueListComponent implements OnInit {
       this.selectedIssue.name = issue.name;
       this.selectedIssue.organizer = issue.organizer;
       this.selectedIssue.type = issue.type;
+      this.selectedIssue.currentPlayers = issue.currentPlayers;
       
     } else {
       this.selectedIssue.id = Math.floor(Math.random()*1000000);
@@ -52,6 +53,7 @@ export class IssueListComponent implements OnInit {
       this.selectedIssue.name = issue.name;
       this.selectedIssue.organizer = issue.organizer;
       this.selectedIssue.type = issue.type;
+      this.selectedIssue.currentPlayers = 0;
       this.issueService.createIssue(issue)
                         .then(createdIssue => {
                           this.issues.push(createdIssue);
@@ -64,6 +66,10 @@ export class IssueListComponent implements OnInit {
     this.selectedIssue = new Issue();
   }
   
+  onJoinClick() : void{
+    this.selectedIssue.currentPlayers+=1;
+  }
+
   onDeleteClick(id: number) {
     this.issueService.deleteIssue(id)
     .then(async () => {

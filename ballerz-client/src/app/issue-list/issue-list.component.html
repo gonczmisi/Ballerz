@@ -8,6 +8,7 @@
             <th scope="col">Name</th>
             <th scope="col">Venue</th>
             <th scope="col">Organizer</th>
+            <th scope="col">Number of players</th>
             <th scope="col">Type</th>
           </tr>
         </thead>
@@ -21,7 +22,11 @@
             </td>
             <td>{{ issue.venue }}</td>
             <td>{{ issue.organizer }}</td>
+            <td>{{ issue.currentPlayers }}</td>
             <td>{{ issue.type }}</td>
+            <td>              
+                <button mat-raised-button color="primary" (click)="onJoinClick()">Join</button>
+            </td>
             <td *ngIf="authService.isAdmin || authService.isOrganizer">              
                 <button mat-raised-button color="warn" (click)="onDeleteClick(issue.id)">Delete</button>
             </td>

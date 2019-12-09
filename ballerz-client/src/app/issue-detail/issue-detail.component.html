@@ -1,8 +1,8 @@
 
-<h1 class="display-2">Event #{{ issue.id }}</h1>
+<h1 class="display-2">{{ issue.name }}</h1>
 <dl class="row">
-  <dt class="col-sm-3">Name</dt>
-  <dd class="col-sm-9">{{ issue.name }}</dd>
+  <dt class="col-sm-3">ID</dt>
+  <dd class="col-sm-9">{{ issue.id }}</dd>
 
   <dt class="col-sm-3">Venue</dt>
   <dd class="col-sm-9">{{ issue.venue }}</dd>
@@ -12,5 +12,8 @@
   
   <dt class="col-sm-3">Type</dt>
   <dd class="col-sm-9">{{ issue.type }}</dd>
+
+  <dt class="col-sm-3">Number of players</dt>
+  <dd class="col-sm-9">{{ issue.currentPlayers }}</dd>
 </dl>
 <button mat-raised-button routerLink="/issues">Back</button>

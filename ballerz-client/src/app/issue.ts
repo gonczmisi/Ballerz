@@ -4,4 +4,5 @@ export class Issue {
     public type: string = 'SINGLE_MATCH';
     public organizer: string = '';
     public venue: string = '';
+    public currentPlayers: number = 0;
 }
