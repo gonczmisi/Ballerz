@@ -269,4 +269,6 @@ A hibák elkerülésének egyetlen módja van:
 
 #### Példa a használatra
 
-(képekkel)
+Körülbelül ilyen érzés használni az alkalmazást:
+
+![Application during use](src/main/resources/in_use.png)
