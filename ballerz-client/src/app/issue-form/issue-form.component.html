@@ -49,23 +49,16 @@
       organizer is required!
     </mat-error>
   </div>
-
-    <div class="form-group">
-      <!-- <small id="organizerHelp" class="form-text text-muted">The error details</small> -->
-      <mat-form-field>
-        <textarea matInput
-          name="organizer"
-          [(ngModel)]="model.organizer"
-          aria-describedby="organizerHelp"
-          placeholder="Enter issue details">
-        </textarea>
-      </mat-form-field>
-    </div>
     
+  <div class="form-group">
+    <input type="radio" value="SINGLE_MATCH" name="type" [ngModel]="model.type" #type="ngModel"> SINGLE_MATCH
+    <input type="radio" value="TOURNAMENT" name="type" [ngModel]="model.type" #type="ngModel"> TOURNAMENT
+  </div>
+
     <button mat-raised-button
       [disabled]="!issueForm.valid" 
       type="submit"
       color="primary">
       Save event
-    </button>
+    </button> 
   </form>

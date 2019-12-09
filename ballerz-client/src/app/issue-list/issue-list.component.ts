@@ -39,14 +39,15 @@ export class IssueListComponent implements OnInit {
       await this.issueService.updateIssue(issue)
       this.selectedIssue.venue = issue.venue;
       this.selectedIssue.name = issue.name;
-      this.selectedIssue.organizer = issue.organizer;;
+      this.selectedIssue.organizer = issue.organizer;
+      this.selectedIssue.type = issue.type;
       
     } else {
       this.selectedIssue.id = Math.floor(Math.random()*1000000);
       this.selectedIssue.venue = issue.venue;
       this.selectedIssue.name = issue.name;
       this.selectedIssue.organizer = issue.organizer;
-      this.selectedIssue.type  = 'SINGLE_MATCH';
+      this.selectedIssue.type = issue.type;
       this.issueService.createIssue(issue)
                         .then(createdIssue => {
                           this.issues.push(createdIssue);
