@@ -6,6 +6,7 @@ import { IssueFormComponent } from '../issue-form/issue-form.component';
 import { IssueDetailComponent } from '../issue-detail/issue-detail.component';
 import { AuthGuard } from '../auth.guard';
 import { LoginFormComponent } from '../login-form/login-form.component';
+import { HomepageComponent } from '../homepage/homepage.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
     path: 'login',
     component: LoginFormComponent
   },
+  {
+      path: 'home',
+      component: HomepageComponent
+  }
 ];
 
 @NgModule({

@@ -16,6 +16,7 @@ import { IssueDetailComponent } from './issue-detail/issue-detail.component';
 import { StatusFilterComponent } from './status-filter/status-filter.component';
 import { RoutingModule } from './routing/routing.module';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginFormComponent } from './login-form/login-form.component';
     IssueFormComponent,
     IssueDetailComponent,
     StatusFilterComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    HomepageComponent
   ],
   imports: [
     NgbModule,
