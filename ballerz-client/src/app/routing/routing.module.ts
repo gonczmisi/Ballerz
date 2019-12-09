@@ -1,34 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { EventListComponent } from "../event-list/event-list.component";
-import { EventFormComponent } from '../event-form/event-form.component';
-import { EventDetailComponent } from '../event-detail/event-detail.component';
-import { LoginFormComponent } from '../login-form/login-form.component';
+import { IssueListComponent } from "../issue-list/issue-list.component";
+import { IssueFormComponent } from '../issue-form/issue-form.component';
+import { IssueDetailComponent } from '../issue-detail/issue-detail.component';
 import { AuthGuard } from '../auth.guard';
+import { LoginFormComponent } from '../login-form/login-form.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/events',
+    redirectTo: '/issues',
     pathMatch: 'full'
   },
   {
-    path: 'events',
-    component: EventListComponent,
+    path: 'issues',
+    component: IssueListComponent,
     canActivate: [ AuthGuard ]
   },
   {
-    path: 'events/new',
-    component: EventFormComponent, 
-    canActivate: [ AuthGuard ],
-    data: {
-     roles: ['ROLE_ADMIN']
-    }
+    path: 'issues/add',
+    component: IssueFormComponent
   },
   {
-    path: 'events/:id',
-    component: EventDetailComponent
+    path: 'issues/:id',
+    component: IssueDetailComponent
   },
   {
     path: 'login',

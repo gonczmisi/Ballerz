@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventFormComponent } from './event-form.component';
+import { StatusFilterComponent } from './status-filter.component';
 
-describe('EventFormComponent', () => {
-  let component: EventFormComponent;
-  let fixture: ComponentFixture<EventFormComponent>;
+describe('StatusFilterComponent', () => {
+  let component: StatusFilterComponent;
+  let fixture: ComponentFixture<StatusFilterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EventFormComponent ]
+      declarations: [ StatusFilterComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EventFormComponent);
+    fixture = TestBed.createComponent(StatusFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

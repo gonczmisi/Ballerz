@@ -1,0 +1,9 @@
+<mat-button-toggle-group (change)="onFilterChange(group.value)" [value]="selectedType" #group="matButtonToggleGroup">
+    <mat-button-toggle value="">
+      ALL
+    </mat-button-toggle>
+    <mat-button-toggle value="{{type}}"  *ngFor="let type of types">
+      {{ type }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+  

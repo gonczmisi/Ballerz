@@ -1,0 +1,71 @@
+<form (submit)="submit(issueForm)" #issueForm="ngForm">
+  <div class="form-group">
+    <!-- <small id="venueHelp" class="form-text text-muted">Give the venue of the issue (e.g. labor)</small> -->
+    <mat-form-field>
+      <input matInput
+        type="text"
+        name="name"
+        [(ngModel)]="model.name"
+        aria-describedby="nameHelp"
+        placeholder="Enter name"
+        required
+        #name="ngModel">
+    </mat-form-field>
+    <mat-error *ngIf="name.invalid && (name.dirty || name.touched) && name.errors.required">
+      name is required!
+    </mat-error>
+  </div>
+
+  <div class="form-group">
+    <!-- <small id="venueHelp" class="form-text text-muted">Give the venue of the issue (e.g. labor)</small> -->
+    <mat-form-field>
+      <input matInput
+        type="text"
+        name="venue"
+        [(ngModel)]="model.venue"
+        aria-describedby="venueHelp"
+        placeholder="Enter venue"
+        required
+        #venue="ngModel">
+    </mat-form-field>
+    <mat-error *ngIf="venue.invalid && (venue.dirty || venue.touched) && venue.errors.required">
+      venue is required!
+    </mat-error>
+  </div>
+    
+  <div class="form-group">
+    <!-- <small id="venueHelp" class="form-text text-muted">Give the venue of the issue (e.g. labor)</small> -->
+    <mat-form-field>
+      <input matInput
+        type="text"
+        name="orgnaizer"
+        [(ngModel)]="model.organizer"
+        aria-describedby="organizerHelp"
+        placeholder="Enter organizer"
+        required
+        #organizer="ngModel">
+    </mat-form-field>
+    <mat-error *ngIf="organizer.invalid && (organizer.dirty || organizer.touched) && organizer.errors.required">
+      organizer is required!
+    </mat-error>
+  </div>
+
+    <div class="form-group">
+      <!-- <small id="organizerHelp" class="form-text text-muted">The error details</small> -->
+      <mat-form-field>
+        <textarea matInput
+          name="organizer"
+          [(ngModel)]="model.organizer"
+          aria-describedby="organizerHelp"
+          placeholder="Enter issue details">
+        </textarea>
+      </mat-form-field>
+    </div>
+    
+    <button mat-raised-button
+      [disabled]="!issueForm.valid" 
+      type="submit"
+      color="primary">
+      Save event
+    </button>
+  </form>

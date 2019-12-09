@@ -1,36 +1,47 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RoutingModule } from './routing/routing.module';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { EventListComponent } from './event-list/event-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { EventFormComponent } from './event-form/event-form.component';
-import { EventDetailComponent } from './event-detail/event-detail.component';
-import { MatButtonModule, MatToolbarModule, MatIconModule, MatSliderModule } from '@angular/material';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { MatToolbarModule, MatButtonToggleModule, MatIconModule, MatButtonModule, MatMenuModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
+import { AppComponent } from './app.component';
+import { IssueListComponent } from './issue-list/issue-list.component';
+import { IssueFormComponent } from './issue-form/issue-form.component';
+import { IssueDetailComponent } from './issue-detail/issue-detail.component'; 
+import { StatusFilterComponent } from './status-filter/status-filter.component';
+import { RoutingModule } from './routing/routing.module';
 import { LoginFormComponent } from './login-form/login-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EventListComponent,
-    EventFormComponent,
-    EventDetailComponent,
-    LoginFormComponent,
+    IssueListComponent,
+    IssueFormComponent,
+    IssueDetailComponent,
+    StatusFilterComponent,
+    LoginFormComponent
   ],
   imports: [
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    RoutingModule, 
+    FlexLayoutModule,
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
+    MatButtonToggleModule,
     MatButtonModule,
-    NgbModule,
-    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatMenuModule,
+    RoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
