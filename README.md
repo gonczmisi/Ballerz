@@ -155,7 +155,19 @@ Egyelőre az alkalmazás nem tartalmaz említésre méltó specifikumot.
 ### Szerepkörök hozzáférési jogai
 
 Az alábbi használati eset diagramok szemléltetik azt, hogy az egyes szerepkörök mely elemekhez férnek hozzá.
-TODO: használati eset diagramok
+Ha egy szerepkör hozzáfér egy funkcióhoz, az azt jelenti, hogy elér minden olyam gombot, mezőt, listát amely ehhez tartozik, viszont nem lát semmi olyat, amihez ne lenne joga.
+
+#### Adminisztrátor
+
+![Use Case Diagram - Administrator Edition](src/main/resources/uc_admin.png)
+
+#### Szervező
+
+![Use Case Diagram - Organizer Edition](src/main/resources/uc_org.png)
+
+#### Felhasználó
+
+![Use Case Diagram - User Edition](src/main/resources/uc_user.png)
 
 ### Kliensoldali szolgáltatások
 
