@@ -1,7 +1,9 @@
 package hu.elte.ballerz.controllers;
 
 import hu.elte.ballerz.entities.Event;
+import hu.elte.ballerz.entities.Match;
 import hu.elte.ballerz.repositories.EventRepository;
+import hu.elte.ballerz.security.AuthenticatedUser;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +25,9 @@ public class EventController {
     @Autowired
     private EventRepository eventRepository;
     
+    @Autowired 
+    private AuthenticatedUser authenticatedUser;
+    
     @GetMapping("")
     public ResponseEntity<Iterable<Event>> getAll() {
         return ResponseEntity.ok(eventRepository.findAll());
@@ -30,11 +35,12 @@ public class EventController {
     
     @GetMapping("/{id}")
     public ResponseEntity<Event> get(@PathVariable Integer id) {
-        Optional<Event> event = eventRepository.findById(id);
-        if (event.isPresent()) {
-            ResponseEntity.ok(event.get());
+        Optional<Event> issue = eventRepository.findById(id);
+        if (issue.isPresent()) {
+            return ResponseEntity.ok(issue.get());
+        } else {
+            return ResponseEntity.notFound().build();
         }
-        return ResponseEntity.notFound().build();
     }
     
     @PostMapping("")
