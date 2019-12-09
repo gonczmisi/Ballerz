@@ -9,18 +9,10 @@ Előfordult már Veled valaha, hogy egy hosszú nap végén már csak arra vágy
 
  - A felhasználók regisztrálhatnak, a későbbiekben pedig ezekkel a hitelesítő adatokkal jelentkezhetnek majd be az alkalmazásba.
  - A regisztrált felhasználók létrehozhatnak eseményeket, vagy csatlakozhatnak mások által létrehozottakhoz.
- - A regisztrált felhasználók barátnak jelölhetnek másik regisztrált felhasználókat.
- - A felületen egy hírfolyam-szerű sávban jelennek meg a felhasználó közelében lévő események, helyszín, telítettség, időpont szerint.
  - A felhasználók kedvencnek jelölhetnek helyszíneket, rendszeres eseményeket, szervezőket, amelyek a hírfolyamban is priorítást élveznek majd.
  - A szervezőknek, helyszíneknek saját oldaluk is lesz, a specifikus információkkal.
  - Helyszíneket és szervező felhasználókat csak rendszeradminisztrátorok hozhatnak létre.
- - A baráti kapcsolatban álló regisztrált felhasználók létrehozhatnak csoportokat (csapatokat), amelyek így együttesen szervezhetnek eseményeket és jelentkezhetnek rájuk.
  - A felhasználóknak lehetősége van arra, hogy az események alá hozzászólásokat írjanak.
- - A csapatok egy esemény szervezésekor, vagy egy eseményre jelentkezéskor kiválaszthatják, hogy a csapat mely tagjait szeretnék alapvetően a résztvevők között felsorolni.
- - Azoknak a regisztrált felhasználóknak, akik létrehoztak eseményt, lehetőségük van az esemény történéseit, például gólszerzőket hozzáadni az esemény leírásához.
- - Egy esemény szervezőjének lehetősége van olyan beállítást megadni az eseményhez, amely biztosítja számára a lehetőséget arra, hogy ő fogadhassa el az eseményére leadott jelentkezéseket.
- - A regisztrált felhasználók az adatlapjukon a lejátszott mérkőzések alapján statisztikákat tehetnek közzé.
- - A statisztikák alapján a rendszer a játékosokat rangsorolja.
 
 ### Az alkalmazás nem funkcionális követelményei
 
@@ -108,7 +100,12 @@ TODO: a leírás kiegészítése az új fájlokkal
       * **resources mappa** *(a mappa tartalmazza a programhoz szükséges "nyersanyagokat", azokat a fájlokat, amelyek nem nevezhetőek kifejezetten forráskódnak, mégis elengedhetetlenek a kielégítő működéshez)*
          * **application.properties** *(tartalmazza az alkalmazás egyes függőségeinek értékadás-szerű utasításokkal való konfigurációját)*
          * **data.sql** *(a H2 Database számára szükséges SQL forrásfájl, amely tartalmazza azokat az utasításokat, amelyeket az adatbázisban a program futása előtt el kell végezni)*
-         * **ballerz.png** *(az előző fejezet által tartalmazott kép)*
+         * **ballerz.png** *(az adatbázis UML diagramját ábrázoló kép)*
+         * **sequence.png** *(a végpontok működésének szekvenciadiagramját ábrázoló kép)*
+         * **uc_admin.png** *(az adminisztrátor hozzáférési jogait bemutató use-case diagram)*
+         * **uc_user.png** *(a szervező hozzáférési jogait bemutató use-case diagram)*
+         * **uc_org.png** *(a felhasználó hozzáférési jogait bemutató use-case diagram)*
+         * **in_use.png** *(az alkalmazás használatát bemutató kép)*
    * **test mappa** *(az implementációkhoz készített tesztesetek, ahol ezt a jellegük indokolja, avval azonos struktúrában)*
 * **target mappa** *(a forrásfájlok alapján legenerált class és egyéb konfigurációs fájlokat, valamint az alkalmazás futtatható verzióját tartalmazza)*
 * **.gitignore** *(a fájl tartalmazza azokat a fájlokat (vagy mintákat), amelyeket a verziókezelő rendszernek figyelmen kívül kell hagynia)*
@@ -117,6 +114,81 @@ TODO: a leírás kiegészítése az új fájlokkal
 * **nbactions.xml** *(a NetBeans fejlesztőkörnyezet által használt konfigurációs fájl, amely leírja, hogy melyik Maven "célokat (goals)" kell alkalmaznia)*
 * **pom.xml** *(a Maven által használt konfigurációs fájl, amely információkat tartalmaz a projektről és annak felépítéséről, kezdve annak nevétől, a package-ek strúktúráján át az egyes függőségek leírásáig minden fontos adattal a build folyamatról és az egyes pluginokról)*
 * **README.md** *(a verziókövető rendszer (pl. Git) által alkalmazott szöveges fájl, mely arra szolgál, hogy a projekt iránt érdeklődők tájékozódhassanak azokról a fontos információkról, amelyeket a fejlesztők megosztanának velük (például a könyvtárstruktúra részletes leírását, remélem mindenki elolvassa idáig haha))*
+* **balerz-client mappa** *(a mappa tartalmazza az Angular segítségével elkészített, frontend felületet megvalósító kliens oldali alkalmazást <<ezt a mappát kell a VSCode segítségével megnyitni>>)*
+  * **e2e mappa** *(az E2E az End-2-End rövidítése, amely a tesztelésre vonatkozik, tehát a mappa a kezdetektől a végletekig való teszteléshez tartalmaz fájlokat - ez teszi lehetővé, hogy tesztelésre kerüljön minden komponens, valamint az azok alkotta egész)*
+    * **tsconfig.json** *(ebben lehet megadni a teszteléshez az elérési utakat)*
+    * **protractor.conf** *(a Protactor end-to-end tesztelő keretrendszerhez szükséges fájl)*
+    * **src mappa** *(forrásfájlokat tartalmaz)*
+      * **app.e2e-spec** *(tartalmazza a konkrét teszteseteket)*
+      * **app.po** *(creates the page object)*
+  * **src mappa** *(forrásfájlokat tartalmaz)*
+    * **app mappa** *(forrásfájlokat tartalmaz)*
+      * **event-detail mappa** *(forrásfájlokat tartalmaz)*
+        * **event-detail.component.html** *(az elemek elrendezkedésének leírása)*
+        * **event-detail.component.css** *(az elemek kinézetének leírása)*
+        * **event-detail.component.ts** *(az interakciók leírása amelyek a felületre kattintva történnek)*
+        * **event-detail.component.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **event-form mappa** *(forrásfájlokat tartalmaz)*
+        * **event-form.component.html** *(az elemek elrendezkedésének leírása)*
+        * **event-form.component.css** *(az elemek kinézetének leírása)*
+        * **event-form.component.ts** *(az interakciók leírása amelyek a felületre kattintva történnek)*
+        * **event-form.component.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **event-list mappa** *(forrásfájlokat tartalmaz)*
+        * **event-list.component.html** *(az elemek elrendezkedésének leírása)*
+        * **event-list.component.css** *(az elemek kinézetének leírása)*
+        * **event-list.component.ts** *(az interakciók leírása amelyek a felületre kattintva történnek)*
+        * **event-list.component.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **login-form mappa** *(forrásfájlokat tartalmaz)*
+        * **login-form.component.html** *(az elemek elrendezkedésének leírása)*
+        * **login-form.component.css** *(az elemek kinézetének leírása)*
+        * **login-form.component.ts** *(az interakciók leírása amelyek a felületre kattintva történnek)*
+        * **login-form.component.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **routing mappa** *(forrásfájlokat tartalmaz)*
+        * **routing.module.ts** *(beállítja a további végponteléréseket)*
+      * **status-filter mappa** *(forrásfájlokat tartalmaz)*
+        * **status-filter.component.html** *(az elemek elrendezkedésének leírása)*
+        * **status-filter.component.css** *(az elemek kinézetének leírása)*
+        * **status-filter.component.ts** *(az interakciók leírása amelyek a felületre kattintva történnek)*
+        * **status-filter.component.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **app.component.html** *(az elemek elrendezkedésének leírása)*
+      * **app.component.css** *(az elemek kinézetének leírása)*
+      * **app.component.ts** *(az interakciók leírása amelyek a felületre kattintva történnek)*
+      * **app.component.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **auth.guard.ts** *(az authorizációhoz szükséges)*
+      * **auth.guard.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **auth.service.ts** *(az authorizációt bonyolítja le, kommunikál a backend-del)*
+      * **auth.service.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **event.service.ts** *(az eseményekhez tartozó lehetőséges és történések kezelése, működőképessé teszi a világmindenséget, kommunikál a backend-del)*
+      * **event.service.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **event.ts** *(Event - esemény - típus leírása)*
+      * **event.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **user.ts** *(User - felhasználó- típus leírása)*
+      * **user.spec.ts** *(a Karma teszt futtató által generált fájl)*
+      * **app.module.ts** *(végpont eléréseket kezeli)*
+    * **assets mappa** *(forrásfájlokat tartalmaz))*
+      * **.gitkeep** *(tartlmazza azokat a fájlokat amelyeket a verziókezelőrendszernek meg kell tartania, mikor frissít)*
+    * **environments mappa** *(forrásfájlokat tartalmaz))*
+      * **environment** *(átlagos környezet)*
+      * **environment.prod** *(production környezet)*
+    * **resources mappa** *(képeket tartalmaz)*
+      * **background.png** *(az oldal háttere)*
+    * **favicon.ico** *(a fejlécben megjelenő ikon)*
+    * **index.html** *(főoldal html kódja)*
+    * **main.ts** *(az alkalmazás belépési pontja)*
+    * **polyfills.ts** *(lehetővé teszi több böngésző számára a kompatibilitást)*
+    * **styles.css** *(minden elemre érvényes stíluselemek leírása)*
+    * **test.ts** *(teszteléshez szükséges belépési pont)*
+  * **.editorconfig** *(tartalmazza a szövegszerkesztő beállításait)*
+  * **angular.json** *(konfigurációs és egyéb beállításokat tartlmaz például az Angular CLI számára)*
+  * **browserlist** *(tartalmazza az alkalmazás által támogatott böngészőket)*
+  * **karma.conf** *(a Karma automata tesztelő keretrendszer konfigurációs fájlja)*
+  * **package.json** *(a Node.js számára szükséges függőségeket tartja nyílván)*
+  * **package-lock.json** *(a függőséges listájának "fáját" tartja nyílván)*
+  * **README.md** *(fejlesztői feljegyzéseket tartalmaz)*
+  * **tsconfig.app.json** *(projekt specifikus TypeScript konfigurációs fájl)*
+  * **tsconfig.json** *(a TypeScript konfigurációs fájlja)*
+  * **tsconfig.spec.json** *(a Karma és Protractor által generált tesztleíró fájl)*
+  * **tslint.json** *(szabályleíró az alkalmazáshoz)*
 
 ### Végpont-tervek és leírások
 
@@ -169,39 +241,15 @@ Ha egy szerepkör hozzáfér egy funkcióhoz, az azt jelenti, hogy elér minden 
 
 ![Use Case Diagram - User Edition](src/main/resources/uc_user.png)
 
-### Kliensoldali szolgáltatások
+### Kliensoldali szolgáltatások listája
 
-#### Egyszerű felhasználó által elérhető szolgáltatások
-
-* Bejelentkezés az alkalmazásba;
-* események listázása;
-* eseményhez hozzászólás írása;
-* események részleteinek megtekintése;
-* mérkőzések listázása;
-* mérkőzésre jelentkezés;
-* kijelentkezés az alkalmazásból.
-
-#### Szervező által elérheteő szolgáltatások
-
-* Bejelentkezés az alkalmazásba;
-* események létrehozása;
-* események listázása;
-* események részleteinek megtekintése;
-* mérkőzések létrehozása;
-* mérkőzések listázása;
-* kijelentkezés az alkalmazásból.
-
-#### Adminisztrátor által elérhető lehetőségek
-
-* Bejelentkezés az alkalmazásba;
-* események létrehozása;
-* események listázása;
-* események részleteinek megtekintése;
-* mérkőzések létrehozása;
-* mérkőzések listázása;
-* felhasználók létrehozása;
-* felhasználók törlése;
-* kijelentkezés az alkalmazásból.
+* Bejelentkezés az alkalmazásba *(a megfelelő felhasználónév - jelszó kombinációkkal be lehet jelentkezni az alkalmazásba, a további funkciók eléréséenk érdekében)*;
+* események létrehozása *(létrehozhatunk új események a neve, helyszíne, és szervezőjének és típusának megadásával - ezután a felhasználók jelentkezhetnek erre az eseményre)*;
+* események listázása *(az eseményeket ki is lehet listáztatni, hogy lássuk, miből lehet választani)*;
+* események részleteinek megtekintése *(egy esemény nevére kattintva, megtekinthetjük annak részletes leírását)*;
+* mérkőzések létrehozása *(létrehozhatunk mérkőzéseket az egyes eseményekhez, a nevük, helyszínük, szervezőjük megadásával)*;
+* mérkőzések listázása *(kilistáztathatjuk a mérkőzéseket)*;
+* kijelentkezés az alkalmazásból *(kijelentkezhetünk az alkalmazásból)*.
 
 ### Funkciók működésének leírása
 
@@ -218,7 +266,7 @@ Ha egy szerepkör hozzáfér egy funkcióhoz, az azt jelenti, hogy elér minden 
 7. Kattintsunk az *Enter* felirattal jelölt gombra.
 * Ekkor meghívódik az **AuthService** osztály **login(string, string)** metódusa.
   * A metódus egy **POST** requestet küld a *backend* számára, amely a **http://localhost:8080/** címen fut-szalad.
-  * A *backend* **BCrypt** eljárással hash-eli a jelszót, mivel az adatbázisban is ilyen formában tároljuk ezt (biztonsági okoból).
+  * A *backend* fogadja a kérést, majd **BCrypt** eljárással hash-eli a jelszót, mivel az adatbázisban is ilyen formában tároljuk ezt (biztonsági okoból).
   * Amennyiben megtalálható az adott felhasználónév-jelszó párossal tarkított adat a felhasználók között, jelzi ezt (vagy ennek ellenkezőjét) a *frontend* számára, amely kiértékeli a választ.
     * Amennyiben helyesek voltak az adatok, a felhasználót bejelentkezetté teszi és továbbítja a **http://localhost:4200/events** címre.
     * Amennyiben hibásak az adatok, jelzi ezt a felhasználó számára.
