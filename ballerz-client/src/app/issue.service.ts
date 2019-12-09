@@ -28,7 +28,7 @@ export class IssueService {
   }
 
   createIssue(issue: Issue): Promise<Issue> {
-    return this.http.post<Issue>(`${this.issueUrl}/${issue.id}`, issue, httpOptions).toPromise();
+    return this.http.post<Issue>(`${this.issueUrl}`, issue, httpOptions).toPromise();
   }
 
   updateIssue(issue: Issue): Promise<Issue> {

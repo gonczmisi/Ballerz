@@ -30,18 +30,18 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @Column(updatable = false)
+    @Column(nullable = true, updatable = false)
     @CreationTimestamp
     private LocalDateTime created_at;
     
-    @Column
+    @Column(nullable = true)
     @UpdateTimestamp
     private LocalDateTime updated_at;
     
     @Column(nullable = false, length = 50)
     private String name;
     
-    @Column(nullable = false, length = 15)
+    @Column(nullable = true, length = 15)
     @Enumerated(EnumType.STRING)
     private EventType type;
     
@@ -51,10 +51,10 @@ public class Event {
     @Column(nullable = false, length = 40)
     private String venue;
     
-    @Column(nullable = false)
+    @Column(nullable = true)
     private LocalDateTime event_from;
     
-    @Column(nullable = false)
+    @Column(nullable = true)
     private LocalDateTime event_to;
     
     @Column(nullable = false)

@@ -15,7 +15,6 @@ export class IssueListComponent implements OnInit {
   public selectedIssue: Issue;
 
   private b : Boolean = false;
-  private num : number = 0;
   private joinedIssues: Issue[] = [];
   private issues: Issue[] = [];
 
@@ -57,7 +56,7 @@ export class IssueListComponent implements OnInit {
       this.selectedIssue.organizer = issue.organizer;
       this.selectedIssue.type = issue.type;
       this.selectedIssue.current_players = 0;
-      this.issueService.createIssue(issue)
+      this.issueService.createIssue(this.selectedIssue)
                         .then(createdIssue => {
                           this.issues.push(createdIssue);
                         });
@@ -75,8 +74,7 @@ export class IssueListComponent implements OnInit {
 
     if(!this.b){
       this.selectedIssue.current_players++;
-      this.joinedIssues[this.num] = this.selectedIssue;
-      this.num++;
+      this.joinedIssues.push(this.selectedIssue);
       this.b = false;
     }
   }
