@@ -12,8 +12,13 @@ INSERT INTO match(event_id, type, maximum_player_num, current_player_num, match_
 
 -- Adding users
 INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('admin', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'admin@ballerz.com', true, 'ADMIN', CURRENT_TIME(), CURRENT_TIME());
-INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('normal', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'normal@ballerz.com', true, 'NORMAL', CURRENT_TIME(), CURRENT_TIME());
 INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('anotheradmin', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'anotheradmin@ballerz.com', true, 'ADMIN', CURRENT_TIME(), CURRENT_TIME());
+INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('szarjanko', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'szarjanko@ballerz.com', true, 'NORMAL', CURRENT_TIME(), CURRENT_TIME());
+INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('kiszeltunde', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'kiszeltunde@ballerz.com', true, 'ORGANIZER', CURRENT_TIME(), CURRENT_TIME());
+INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('feketepako', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'szarjanko@ballerz.com', true, 'NORMAL', CURRENT_TIME(), CURRENT_TIME());
+INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('erdeiboszorkany', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'erdeiboszorkany@ballerz.com', true, 'NORMAL', CURRENT_TIME(), CURRENT_TIME());
 
 -- Adding players
-INSERT INTO player(id, position) VALUES(2, 'GOALKEEPER');
+INSERT INTO player(id, position) VALUES(3, 'GOALKEEPER');
+INSERT INTO player(id, position) VALUES(5, 'DEFENDER');
+INSERT INTO player(id, position) VALUES(6, 'MIDDLEFIELDER');

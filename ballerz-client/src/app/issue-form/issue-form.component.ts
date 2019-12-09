@@ -23,6 +23,7 @@ export class IssueFormComponent implements OnChanges {
     if (!form.valid) {
       return;
     }
+    console.log("SÍROK")
     this.onSubmit.emit(this.model);
   }
 
