@@ -8,16 +8,12 @@
         <div fxLayout="row" fxShow="false" fxShow.gt-sm>
           <div *ngIf="authService.isLoggedIn">
             <button mat-button routerLink="/issues">Events</button>
-            <button
-              mat-button routerLink="/issues/add"
-              *ngIf="authService.isAdmin || authService.isOrganizer">
-              Create new events
-            </button>
             
-            <span class="col">Logged user: {{ authService.user.username }}</span>
-            <span class="col">Permissions: {{ authService.user.type }}</span>
             <button mat-button (click)="logout()">Logout</button>
             <mat-icon>lock_open</mat-icon>
+            <span class="col">Logged user: {{ authService.user.username }}</span>
+            <span class="col">Permissions: {{ authService.user.type }}</span>
+            
           </div>
           <div *ngIf="!authService.isLoggedIn">
             <mat-icon>lock</mat-icon>
