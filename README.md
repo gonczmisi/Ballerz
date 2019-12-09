@@ -260,7 +260,12 @@ Ahhoz, hogy a programot használhassuk, az alábbi lépéseket kell megtennünk:
 
 #### Hibák oka és elkerülése
 
-LEHETETLEN.
+A hiba oka az alkalmazás gyenge minőségben való megírása, az elkapkodott és összecsapott munka, amelynek a készítők is áldozataik.
+Nem vagyunk büszkék az elkészült programra, mert nem tükrözi azt, hogy milyen minőségben szoktunk dolgozni.
+A félév vége sajnos a nagyon sűrű, így alig másfél napunk maradt arra, hogy elkészítsük az alkalmazást, ezért elnézést kérünk.
+
+A hibák elkerülésének egyetlen módja van:
+* **NE HASZNÁLJUK EZT AZ ALKALMAZÁST!**
 
 #### Példa a használatra
 
