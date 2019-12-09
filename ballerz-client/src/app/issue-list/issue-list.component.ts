@@ -14,6 +14,9 @@ export class IssueListComponent implements OnInit {
   public selectedType: string;
   public selectedIssue: Issue;
 
+  private b : Boolean = false;
+  private num : number = 0;
+  private joinedIssues: Issue[] = [];
   private issues: Issue[] = [];
 
   constructor(
@@ -67,7 +70,15 @@ export class IssueListComponent implements OnInit {
   }
   
   onJoinClick() : void{
-    this.selectedIssue.current_players+=1;
+    for(let is of this.joinedIssues)
+      this.b = (this.selectedIssue == is);
+
+    if(!this.b){
+      this.selectedIssue.current_players++;
+      this.joinedIssues[this.num] = this.selectedIssue;
+      this.num++;
+      this.b = false;
+    }
   }
 
   onDeleteClick(id: number) {
