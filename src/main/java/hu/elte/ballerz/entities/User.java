@@ -44,6 +44,9 @@ public class User {
     @Column(nullable = false, length = 65)
     private String password;
     
+    @Column(nullable = false)
+    private boolean enabled;
+    
     @Column(nullable = false, length = 40)
     private String email_address;
     
