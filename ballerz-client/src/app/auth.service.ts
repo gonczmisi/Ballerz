@@ -14,6 +14,8 @@ export const httpOptions = {
 })
 export class AuthService {
   public isLoggedIn: boolean = false;
+  public isAdmin: boolean = false;
+  public isOrganizer: boolean = false;
   public user: User;
   public redirectUrl: string;
 
@@ -23,6 +25,10 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
+  getUser() : User {
+    return this.user;
+  }
+
   async login(username: string, password: string): Promise<User> {
     try {
       const token = btoa(`${username}:${password}`);
@@ -30,6 +36,8 @@ export class AuthService {
       const user = await this.http.post<User>(`${this.authUrl}/login`, {}, httpOptions).toPromise();
       this.isLoggedIn = true;
       this.user = user;
+      this.isAdmin = (this.user.type == "ADMIN");
+      this.isOrganizer = (this.user.type == "ORGANIZER");
       console.log(user);
       return Promise.resolve(this.user);
     } catch (e) {

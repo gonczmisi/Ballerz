@@ -17,6 +17,7 @@ INSERT INTO user(username, password, email_address, enabled, type, created_at, u
 INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('kiszeltunde', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'kiszeltunde@ballerz.com', true, 'ORGANIZER', CURRENT_TIME(), CURRENT_TIME());
 INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('feketepako', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'szarjanko@ballerz.com', true, 'NORMAL', CURRENT_TIME(), CURRENT_TIME());
 INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('erdeiboszorkany', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'erdeiboszorkany@ballerz.com', true, 'NORMAL', CURRENT_TIME(), CURRENT_TIME());
+INSERT INTO user(username, password, email_address, enabled, type, created_at, updated_at) VALUES('szokecigany', '$2a$04$YDiv9c./ytEGZQopFfExoOgGlJL6/o0er0K.hiGb5TGKHUL8Ebn..', 'szokecigany@ballerz.com', true, 'NORMAL', CURRENT_TIME(), CURRENT_TIME());
 
 -- Adding players
 INSERT INTO player(id, position) VALUES(3, 'GOALKEEPER');

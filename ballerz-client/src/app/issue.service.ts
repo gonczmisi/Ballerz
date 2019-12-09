@@ -15,6 +15,10 @@ export class IssueService {
     private authService: AuthService
   ) { }
 
+  getAuthService() : AuthService{
+    return this.authService;
+  }
+
   getIssues(): Promise<Issue[]> {
     return this.http.get<Issue[]>(`${this.issueUrl}`, httpOptions).toPromise();
   }

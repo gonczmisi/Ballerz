@@ -7,9 +7,15 @@
         <span class="fill-remaining-space" fxHide="false" fxHide.gt-sm></span>
         <div fxLayout="row" fxShow="false" fxShow.gt-sm>
           <div *ngIf="authService.isLoggedIn">
-            <button mat-button routerLink="/issues">My Events</button>
-            <button mat-button routerLink="/issues/add">New events</button>
-            <span>Hello, {{ authService.user.username }}!</span>
+            <button mat-button routerLink="/issues">Matches</button>
+            <button
+              mat-button routerLink="/issues/add"
+              *ngIf="authService.isAdmin || authService.isOrganizer">
+              Create new matches
+            </button>
+            
+            <span class="col">Logged user: {{ authService.user.username }}</span>
+            <span class="col">Permissions: {{ authService.user.type }}</span>
             <button mat-button (click)="logout()">Logout</button>
             <mat-icon>lock_open</mat-icon>
           </div>

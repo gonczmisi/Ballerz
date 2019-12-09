@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Issue } from "../issue";
 import { IssueService } from '../issue.service';
+import { AuthService } from '../auth.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-issue-list',
@@ -15,13 +17,15 @@ export class IssueListComponent implements OnInit {
   private issues: Issue[] = [];
 
   constructor(
-    private issueService: IssueService
+    private issueService: IssueService,
+    private authService: AuthService,
   ) { 
   }
 
   async ngOnInit(): Promise<void> {
     this.selectedType = '';
     this.issues = await this.issueService.getIssues();
+    this.authService = this.issueService.getAuthService();
     this.filter();
   }
 

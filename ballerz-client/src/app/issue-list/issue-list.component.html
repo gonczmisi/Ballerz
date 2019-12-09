@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col">
-      <h1 class="display-2">My Events</h1>
+      <h2 class="display-2">Find a match that fits your needs!</h2>
       <table class="table">
         <thead>
           <tr>
@@ -22,8 +22,8 @@
             <td>{{ issue.venue }}</td>
             <td>{{ issue.organizer }}</td>
             <td>{{ issue.type }}</td>
-            <td>
-              <button mat-raised-button color="warn" (click)="onDeleteClick(issue.id)">Delete</button>
+            <td *ngIf="authService.isAdmin || authService.isOrganizer">              
+                <button mat-raised-button color="warn" (click)="onDeleteClick(issue.id)">Delete</button>
             </td>
           </tr>
         </tbody>
@@ -33,9 +33,18 @@
   
   <status-filter [type]="selectedType" (onChange)="onFilterChange($event)"></status-filter>
   
-  <button mat-raised-button color="primary" (click)="onNewClick()">New event</button>
+  <button 
+    mat-raised-button color="primary"
+    (click)="onNewClick()"
+    *ngIf="authService.isAdmin || authService.isOrganizer">
+    New event
+  </button>
   <div class="col" *ngIf="selectedIssue">
-    <issue-form [issue]="selectedIssue" (onSubmit)="onFormSubmit($event)"></issue-form>
+    <issue-form
+      [issue]="selectedIssue"
+      (onSubmit)="onFormSubmit($event)"
+      *ngIf="authService.isAdmin || authService.isOrganizer">
+    </issue-form>
   </div>
 
 
