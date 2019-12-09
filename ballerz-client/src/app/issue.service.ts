@@ -12,7 +12,7 @@ export class IssueService {
 
   constructor(
     private http: HttpClient,
-    private authService: AuthService 
+    private authService: AuthService
   ) { }
 
   getIssues(): Promise<Issue[]> {

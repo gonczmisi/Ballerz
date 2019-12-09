@@ -20,10 +20,10 @@
               </a>
             </td>
             <td>{{ issue.venue }}</td>
-            <td>{{ issue.type }}</td>
             <td>{{ issue.organizer }}</td>
+            <td>{{ issue.type }}</td>
             <td>
-              <button mat-raised-button color="primary" (click)="onDeleteClick(issue.id)">Delete</button>
+              <button mat-raised-button color="secondary" (click)="onDeleteClick(issue.id)">Delete</button>
             </td>
           </tr>
         </tbody>

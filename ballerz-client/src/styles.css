@@ -1,4 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    background-image: url(resources/background.png);
+    background-size: cover;
+	min-width: 400px;
+	max-width: 1920px;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html body {
+	background-color:#8fc7ff;
+	text-align: justify;
+	font-size: 100%;
+	min-width: 400px;
+	max-width: 1600px;
+	width: 90%;
+	margin: auto;
+	padding: 2%;
+	border-radius: 20px;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+html body nav {
+    font-size: 500%;
+}
