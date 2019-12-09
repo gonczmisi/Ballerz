@@ -1,16 +1,28 @@
+.alles {
+    color: khaki;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 h1 {
+    font-size: 72px;
+    font-style: italic;
+    padding-top: 60px;
     width: 70%;
     text-align: center;
     margin: auto;
 }
 
 h2 {
+    font-size: 48px;
+    padding-top: 40px;
     width: 70%;
     text-align: justify;
     margin: auto;
 }
 
 p {
+    font-size: 36px;
+    padding-top: 20px;
     width: 70%;
     text-align: justify;
     margin: auto;
