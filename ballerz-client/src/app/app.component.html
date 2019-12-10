@@ -9,7 +9,7 @@
           <div *ngIf="authService.isLoggedIn">
             <button mat-button routerLink="/issues">Events</button>
             
-            <button mat-button (click)="logout()">Logout</button>
+            <button mat-button (click)="logout()" routerLink="/home">Logout</button>
             <mat-icon>lock_open</mat-icon>
             <span class="col">Logged user: {{ authService.user.username }}</span>
             <span class="col">Permissions: {{ authService.user.type }}</span>
@@ -28,7 +28,7 @@
         <div *ngIf="authService.isLoggedIn">
           <button mat-menu-item routerLink="/issues">My issues</button>
           <button mat-menu-item routerLink="/issues/add">New issues</button>
-          <button mat-menu-item (click)="logout()">Logout</button>
+          <button mat-menu-item (click)="logout()" routerLink="/home">Logout</button>
           <mat-icon>lock_open</mat-icon>
         </div>
         <div *ngIf="!authService.isLoggedIn">
