@@ -76,6 +76,7 @@ export class IssueListComponent implements OnInit {
       this.selectedIssue.current_players++;
       this.joinedIssues.push(this.selectedIssue);
       this.b = false;
+      this.onFormSubmit(this.selectedIssue);
     }
   }
 
